@@ -1,0 +1,20 @@
+{
+    "id": "./",
+    "name": "NCSL Bund Wall Workers Allowance",
+    "short_name": "NCSL Allowance",
+    "description": "NCSL Bund Wall Workers Weekly Allowance Form",
+    "start_url": "./index.html",
+    "scope": "./",
+    "display": "standalone",
+    "orientation": "landscape",
+    "background_color": "#f1f4f8",
+    "theme_color": "#102b4e",
+    "icons": [
+        {
+            "src": "icon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any"
+        }
+    ]
+}

@@ -1,0 +1,422 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f1f4f8;
+    color: #202b38;
+}
+
+.app-header {
+    background: #102b4e;
+    color: white;
+    text-align: center;
+    padding: 25px 10px;
+}
+
+.app-header h1 {
+    font-size: 34px;
+    margin: 0 0 8px;
+    letter-spacing: 3px;
+}
+
+.app-header h2 {
+    font-size: 21px;
+    margin: 0;
+}
+
+.app-header p {
+    color: #c8d8e8;
+    margin-bottom: 0;
+}
+
+.container {
+    width: 96%;
+    max-width: 1600px;
+    margin: 20px auto;
+}
+
+.week-details {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    background: white;
+    padding: 18px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.week-details div {
+    flex: 1;
+    min-width: 220px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #102b4e;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bdc8d4;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.notice {
+    background: #e3edf8;
+    border-left: 4px solid #315f89;
+    padding: 12px;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+button {
+    border: none;
+    padding: 12px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+button:hover {
+    opacity: 0.88;
+}
+
+.primary-btn {
+    background: #102b4e;
+    color: white;
+}
+
+.success-btn {
+    background: #167447;
+    color: white;
+}
+
+.secondary-btn {
+    background: #53677d;
+    color: white;
+}
+
+.danger-btn {
+    background: #b83232;
+    color: white;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #ccd5df;
+}
+
+table {
+    width: 100%;
+    min-width: 1500px;
+    border-collapse: collapse;
+    background: white;
+}
+
+th,
+td {
+    border: 1px solid #cbd4df;
+    padding: 8px;
+    text-align: center;
+    font-size: 12px;
+}
+
+thead th {
+    background: #102b4e;
+    color: white;
+    white-space: nowrap;
+}
+
+thead tr:nth-child(2) th {
+    background: #315f89;
+}
+
+.name-column {
+    min-width: 180px;
+}
+
+td input {
+    min-width: 90px;
+    padding: 8px 5px;
+    text-align: center;
+    border: 1px solid #cbd4df;
+}
+
+td input.worker-name {
+    min-width: 160px;
+    text-align: left;
+}
+
+td input.account-input {
+    min-width: 145px;
+}
+
+td input.bank-input {
+    min-width: 120px;
+}
+
+.total-cell {
+    font-weight: bold;
+    color: #102b4e;
+    white-space: nowrap;
+}
+
+.remove-btn {
+    background: #b83232;
+    color: white;
+    padding: 8px 10px;
+}
+
+.grand-total-row td {
+    background: #dce8f3;
+    color: #102b4e;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 13px 8px;
+}
+
+.summary {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+}
+
+.summary div {
+    flex: 1;
+    min-width: 200px;
+    background: white;
+    padding: 18px;
+    border-radius: 7px;
+    border-left: 4px solid #315f89;
+}
+
+.summary span {
+    display: block;
+    color: #526273;
+    margin-bottom: 8px;
+}
+
+.summary strong {
+    font-size: 22px;
+    color: #102b4e;
+}
+
+.save-status {
+    color: #167447;
+    font-size: 13px;
+    margin-top: 18px;
+}
+
+footer {
+    text-align: center;
+    color: #667788;
+    margin: 30px 0 15px;
+    font-size: 13px;
+}
+
+/* Mobile phone appearance */
+
+@media (max-width: 600px) {
+    .app-header h1 {
+        font-size: 28px;
+    }
+
+    .app-header h2 {
+        font-size: 16px;
+    }
+
+    .container {
+        width: 96%;
+    }
+
+    .toolbar button {
+        flex: 1 1 45%;
+        font-size: 12px;
+        padding: 12px 6px;
+    }
+
+    .week-details {
+        gap: 12px;
+    }
+
+    .summary div {
+        min-width: 100%;
+    }
+}
+
+/* Printing */
+
+@media print {
+    @page {
+        size: A3 landscape;
+        margin: 8mm;
+    }
+
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    body {
+        background: white !important;
+        color: black !important;
+        font-size: 8px;
+    }
+
+    .container {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+    }
+
+    .app-header {
+        background: white !important;
+        color: #102b4e !important;
+        padding: 8px !important;
+        border-bottom: 2px solid #102b4e;
+    }
+
+    .app-header h1 {
+        font-size: 23px !important;
+        margin: 0 0 4px !important;
+    }
+
+    .app-header h2 {
+        font-size: 15px !important;
+        margin: 0 !important;
+    }
+
+    .app-header p {
+        color: #102b4e !important;
+        font-size: 10px !important;
+        margin: 4px 0 !important;
+    }
+
+    .toolbar,
+    .notice,
+    .save-status,
+    footer,
+    .no-print {
+        display: none !important;
+    }
+
+    .week-details {
+        display: flex !important;
+        padding: 5px !important;
+        margin: 5px 0 !important;
+        gap: 15px !important;
+        background: white !important;
+    }
+
+    .week-details label {
+        display: inline !important;
+        font-size: 9px !important;
+    }
+
+    .week-details input {
+        border: none !important;
+        padding: 2px !important;
+        font-size: 9px !important;
+        width: auto !important;
+    }
+
+    .table-wrapper {
+        overflow: visible !important;
+        width: 100% !important;
+        border: none !important;
+    }
+
+    table {
+        width: 100% !important;
+        min-width: 0 !important;
+        table-layout: fixed !important;
+        border-collapse: collapse !important;
+    }
+
+    th,
+    td {
+        border: 1px solid #333 !important;
+        padding: 4px 2px !important;
+        font-size: 6.5px !important;
+        text-align: center !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    thead th {
+        background: #102b4e !important;
+        color: white !important;
+    }
+
+    thead tr:nth-child(2) th {
+        background: #315f89 !important;
+        color: white !important;
+    }
+
+    td input {
+        width: 100% !important;
+        min-width: 0 !important;
+        padding: 1px !important;
+        border: none !important;
+        font-size: 6.5px !important;
+        color: black !important;
+        text-align: center !important;
+        background: transparent !important;
+    }
+
+    td input.worker-name {
+        text-align: left !important;
+    }
+
+    .total-cell {
+        font-weight: bold !important;
+        color: black !important;
+    }
+
+    .grand-total-row td {
+        background: #dce8f3 !important;
+        color: #102b4e !important;
+        font-weight: bold !important;
+    }
+
+    .summary {
+        display: flex !important;
+        margin-top: 8px !important;
+        gap: 10px !important;
+    }
+
+    .summary div {
+        border: 1px solid #333 !important;
+        padding: 6px !important;
+        background: white !important;
+    }
+
+    .summary span,
+    .summary strong {
+        color: black !important;
+        font-size: 9px !important;
+    }
+
+    tr {
+        break-inside: avoid !important;
+    }
+}

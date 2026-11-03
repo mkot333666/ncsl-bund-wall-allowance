@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NCSL Bund Wall Workers Allowance Form</title>
+
+    <meta name="theme-color" content="#102b4e">
+    <meta name="description" content="NCSL Bund Wall Workers Weekly Allowance Recording System">
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="app-header">
+        <h1>NCSL</h1>
+        <h2>BUND WALL WORKERS ALLOWANCE FORM</h2>
+        <p>Weekly Workers Payment Record</p>
+    </header>
+
+    <main class="container">
+
+        <section class="week-details">
+            <div>
+                <label for="weekEnding">Week Ending (Saturday)</label>
+                <input type="date" id="weekEnding">
+            </div>
+
+            <div>
+                <label for="weekReference">Week / Reference (Optional)</label>
+                <input
+                    type="text"
+                    id="weekReference"
+                    placeholder="e.g. Week 1 - November"
+                >
+            </div>
+        </section>
+
+        <div class="notice">
+            Enter the amount paid or due to each worker under the
+            appropriate day and location. All amounts are in Nigerian Naira (₦).
+        </div>
+
+        <div class="toolbar">
+            <button type="button" id="addWorkerBtn" class="primary-btn">
+                + Add Worker
+            </button>
+
+            <button type="button" id="exportBtn" class="success-btn">
+                Export CSV / Excel
+            </button>
+
+            <button type="button" id="printBtn" class="secondary-btn">
+                Print Form
+            </button>
+
+            <button type="button" id="clearBtn" class="danger-btn">
+                Clear Week
+            </button>
+        </div>
+
+        <div class="table-wrapper">
+            <table id="allowanceTable">
+
+                <thead>
+                    <tr>
+                        <th rowspan="2">S/N</th>
+                        <th rowspan="2" class="name-column">WORKER'S NAME</th>
+
+                        <th colspan="2">MONDAY</th>
+                        <th colspan="2">TUESDAY</th>
+                        <th colspan="2">WEDNESDAY</th>
+                        <th colspan="2">THURSDAY</th>
+                        <th colspan="2">FRIDAY</th>
+                        <th colspan="2">SATURDAY</th>
+
+                        <th rowspan="2">TOTAL (₦)</th>
+                        <th rowspan="2">ACCOUNT NUMBER</th>
+                        <th rowspan="2">BANK NAME</th>
+                        <th rowspan="2" class="no-print">ACTION</th>
+                    </tr>
+
+                    <tr>
+                        <th>Mbaise A</th>
+                        <th>Mbaise B</th>
+
+                        <th>Mbaise A</th>
+                        <th>Mbaise B</th>
+
+                        <th>Mbaise A</th>
+                        <th>Mbaise B</th>
+
+                        <th>Mbaise A</th>
+                        <th>Mbaise B</th>
+
+                        <th>Mbaise A</th>
+                        <th>Mbaise B</th>
+
+                        <th>Mbaise A</th>
+                        <th>Mbaise B</th>
+                    </tr>
+                </thead>
+
+                <tbody id="workersBody">
+                    <!-- Worker rows are created by JavaScript -->
+                </tbody>
+
+                <tfoot>
+                    <tr class="grand-total-row">
+                        <td colspan="14">GRAND TOTAL</td>
+                        <td id="grandTotal">₦0.00</td>
+                        <td colspan="3"></td>
+                    </tr>
+                </tfoot>
+
+            </table>
+        </div>
+
+        <section class="summary">
+            <div>
+                <span>Total Workers</span>
+                <strong id="workerCount">0</strong>
+            </div>
+
+            <div>
+                <span>Total Weekly Allowance</span>
+                <strong id="summaryTotal">₦0.00</strong>
+            </div>
+        </section>
+
+        <p id="saveStatus" class="save-status">
+            Your entries are saved automatically on this device.
+        </p>
+
+        <footer>
+            <p>NCSL — Bund Wall Workers Allowance Record</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
